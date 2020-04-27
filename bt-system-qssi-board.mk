@@ -7,7 +7,7 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 
 #FM
 ifneq ($(TARGET_BOARD_TYPE),auto)
-BOARD_HAVE_QCOM_FM := true
+BOARD_HAVE_QCOM_FM ?= false
 endif
 
 ifeq ($(TARGET_USES_QMAA),true)
@@ -15,6 +15,6 @@ ifneq ($(TARGET_USES_QMAA_OVERRIDE_BLUETOOTH),true)
 BOARD_ANT_WIRELESS_DEVICE :=
 endif
 ifneq ($(TARGET_USES_QMAA_OVERRIDE_FM),true)
-BOARD_HAVE_QCOM_FM := false
+BOARD_HAVE_QCOM_FM ?= false
 endif
 endif

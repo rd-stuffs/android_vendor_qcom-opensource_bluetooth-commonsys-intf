@@ -7,7 +7,7 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 
 #FM
 ifneq ($(TARGET_BOARD_TYPE),auto)
-BOARD_HAVE_QCOM_FM := true
+BOARD_HAVE_QCOM_FM ?= false
 endif
 
 TARGET_USE_QTI_BT_CONFIGSTORE := true
@@ -22,6 +22,6 @@ DISABLE_BT_FTM := true
 BOARD_ANT_WIRELESS_DEVICE :=
 endif
 ifneq ($(TARGET_USES_QMAA_OVERRIDE_FM),true)
-BOARD_HAVE_QCOM_FM := false
+BOARD_HAVE_QCOM_FM ?= false
 endif
 endif
