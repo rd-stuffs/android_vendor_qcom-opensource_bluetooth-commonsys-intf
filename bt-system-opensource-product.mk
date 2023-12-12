@@ -37,6 +37,9 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.bluetooth.leaudio_offload.supported=true \
     persist.bluetooth.leaudio_offload.disabled=false \
     persist.bluetooth.leaudio.allow.multiple.context=false
+
+PRODUCT_PACKAGES += Xpan
+PRODUCT_PACKAGES += privapp-permission-xpan.xml
 endif #TARGET_BOARD_TYPE
 
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS), true)
