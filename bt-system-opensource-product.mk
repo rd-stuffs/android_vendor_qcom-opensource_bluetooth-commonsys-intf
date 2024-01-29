@@ -34,6 +34,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     bluetooth.profile.sap.server.enabled=true \
     bluetooth.profile.pbap.sim.enabled=true \
+    bluetooth.hfp.codec_aptx_voice.enabled=true \
     ro.bluetooth.leaudio_offload.supported=true \
     persist.bluetooth.leaudio_offload.disabled=false \
     persist.bluetooth.leaudio.allow.multiple.context=false
