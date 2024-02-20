@@ -21,7 +21,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.avrcp.target.enabled=true \
     bluetooth.profile.avrcp.controller.enabled=true \
     bluetooth.profile.hfp.ag.enabled=true \
-    bluetooth.profile.asha.central.enabled=true \
     bluetooth.profile.gatt.enabled=true \
     bluetooth.profile.hid.host.enabled=true \
     bluetooth.profile.hid.device.enabled=true \
