@@ -21,7 +21,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.avrcp.target.enabled=true \
     bluetooth.profile.avrcp.controller.enabled=true \
     bluetooth.profile.hfp.ag.enabled=true \
-    bluetooth.profile.asha.central.enabled=true \
     bluetooth.profile.gatt.enabled=true \
     bluetooth.profile.hid.host.enabled=true \
     bluetooth.profile.hid.device.enabled=true \
@@ -34,9 +33,13 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     bluetooth.profile.sap.server.enabled=true \
     bluetooth.profile.pbap.sim.enabled=true \
+    bluetooth.hfp.codec_aptx_voice.enabled=true \
     ro.bluetooth.leaudio_offload.supported=true \
     persist.bluetooth.leaudio_offload.disabled=false \
     persist.bluetooth.leaudio.allow.multiple.context=false
+
+PRODUCT_PACKAGES += Xpan
+PRODUCT_PACKAGES += privapp-permission-xpan.xml
 endif #TARGET_BOARD_TYPE
 
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS), true)
