@@ -36,7 +36,8 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     bluetooth.hfp.codec_aptx_voice.enabled=true \
     ro.bluetooth.leaudio_offload.supported=true \
     persist.bluetooth.leaudio_offload.disabled=false \
-    persist.bluetooth.leaudio.allow.multiple.context=false
+    persist.bluetooth.leaudio.allow.multiple.context=false \
+    persist.bluetooth.leaudio.bypass_allow_list=true
 
 PRODUCT_PACKAGES += Xpan
 PRODUCT_PACKAGES += privapp-permission-xpan.xml
