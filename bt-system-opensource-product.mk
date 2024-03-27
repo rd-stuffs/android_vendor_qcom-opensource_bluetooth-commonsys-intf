@@ -125,3 +125,6 @@ PRODUCT_PACKAGES += com.quicinc.wipoweragent
 PRODUCT_PACKAGES += com.quicinc.wbcserviceapp
 endif #TARGET_FWK_SUPPORTS_FULL_VALUEADDS
 endif #BOARD_USES_WIPOWER
+
+PRODUCT_PACKAGES += org.carconnectivity.android.digitalkey.timesync
+PRODUCT_PACKAGES += QcDckTimeSyncService
