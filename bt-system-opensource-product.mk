@@ -41,8 +41,11 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.bluetooth.leaudio.bypass_allow_list=true \
     bluetooth.leaudio.dual_bidirection_swb.supported=true
 
+ifneq ($(TARGET_HAS_LOW_RAM), true)
 PRODUCT_PACKAGES += Xpan
 PRODUCT_PACKAGES += privapp-permission-xpan.xml
+endif #TARGET_HAS_LOW_RAM
+
 endif #TARGET_BOARD_TYPE
 
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS), true)
@@ -128,3 +131,6 @@ PRODUCT_PACKAGES += com.quicinc.wipoweragent
 PRODUCT_PACKAGES += com.quicinc.wbcserviceapp
 endif #TARGET_FWK_SUPPORTS_FULL_VALUEADDS
 endif #BOARD_USES_WIPOWER
+
+PRODUCT_PACKAGES += org.carconnectivity.android.digitalkey.timesync
+PRODUCT_PACKAGES += QcDckTimeSyncService
