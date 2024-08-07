@@ -35,6 +35,7 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     bluetooth.profile.sap.server.enabled=true \
     bluetooth.profile.pbap.sim.enabled=true \
     bluetooth.hfp.codec_aptx_voice.enabled=true \
+    bluetooth.hfp.swb.aptx.power_management.enabled=true \
     ro.bluetooth.leaudio_offload.supported=true \
     bluetooth.device.class_of_device=90,2,12 \
     persist.bluetooth.leaudio_offload.disabled=false \
