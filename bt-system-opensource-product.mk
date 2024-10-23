@@ -14,25 +14,40 @@ endif #TARGET_FWK_SUPPORTS_FULL_VALUEADDS
 ifeq ($(BOARD_HAVE_BLUETOOTH_QCOM),true)
 PRODUCT_PACKAGES += Bluetooth
 
-ifneq ($(TARGET_BOARD_TYPE),auto)
-# Set supported Bluetooth profiles to enabled
-PRODUCT_VENDOR_PROPERTIES += \
-    bluetooth.device.class_of_device=90,2,12 \
-    bluetooth.profile.a2dp.source.enabled=true \
-    bluetooth.profile.avrcp.target.enabled=true \
-    bluetooth.profile.avrcp.controller.enabled=true \
-    bluetooth.profile.hfp.ag.enabled=true \
-    bluetooth.profile.asha.central.enabled=true \
-    bluetooth.profile.gatt.enabled=true \
-    bluetooth.profile.hid.host.enabled=true \
-    bluetooth.profile.hid.device.enabled=true \
-    bluetooth.profile.map.server.enabled=true \
-    bluetooth.profile.opp.enabled=true \
-    bluetooth.profile.pan.nap.enabled=true \
-    bluetooth.profile.pan.panu.enabled=true \
-    bluetooth.profile.pbap.server.enabled=true
+TARGET_NAME +=$(TARGET_BOARD_PLATFORM)$(TARGET_BOARD_SUFFIX)
+ifeq ($(TARGET_NAME),qssi_lite)
+  # Set supported Bluetooth profiles to enabled
+  PRODUCT_VENDOR_PROPERTIES += \
+      bluetooth.profile.avrcp.target.enabled=true \
+      bluetooth.profile.avrcp.controller.enabled=true \
+      bluetooth.profile.asha.central.enabled=true \
+      bluetooth.profile.gatt.enabled=true \
+      bluetooth.profile.hid.host.enabled=true \
+      bluetooth.profile.hid.device.enabled=true \
+      bluetooth.profile.opp.enabled=true \
+      bluetooth.profile.pan.nap.enabled=true \
+      bluetooth.profile.pan.panu.enabled=true \
+      bluetooth.profile.pbap.server.enabled=true
 
-PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.sap.server.enabled=true
+  PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.sap.server.enabled=true
+else ifneq ($(TARGET_BOARD_TYPE),auto)
+  PRODUCT_VENDOR_PROPERTIES += \
+      bluetooth.device.class_of_device=90,2,12 \
+      bluetooth.profile.a2dp.source.enabled=true \
+      bluetooth.profile.avrcp.target.enabled=true \
+      bluetooth.profile.avrcp.controller.enabled=true \
+      bluetooth.profile.hfp.ag.enabled=true \
+      bluetooth.profile.asha.central.enabled=true \
+      bluetooth.profile.gatt.enabled=true \
+      bluetooth.profile.hid.host.enabled=true \
+      bluetooth.profile.hid.device.enabled=true \
+      bluetooth.profile.map.server.enabled=true \
+      bluetooth.profile.opp.enabled=true \
+      bluetooth.profile.pan.nap.enabled=true \
+      bluetooth.profile.pan.panu.enabled=true \
+      bluetooth.profile.pbap.server.enabled=true
+
+  PRODUCT_SYSTEM_EXT_PROPERTIES += bluetooth.profile.sap.server.enabled=true
 endif #TARGET_BOARD_TYPE
 
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS), true)
